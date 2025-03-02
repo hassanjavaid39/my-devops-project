@@ -22,7 +22,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install Dependencies
-      run: echo "No dependencies needed for now"
+      run: pip install -r requirements.txt || echo "No dependencies needed"
 
-    - name: Run Application
-      run: python app.py
+    - name: Run Tests
+      run: python -m unittest discover tests
